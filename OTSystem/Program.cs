@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            IndustrialControlSystem ics = new IndustrialControlSystem();
+            ics.Run();
+            Console.WriteLine("Hello World!");
         }
     }
 }
