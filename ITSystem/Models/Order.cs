@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITSystem
+namespace ITSystem.Models
 {
     internal class Order
     {
