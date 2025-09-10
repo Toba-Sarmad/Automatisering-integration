@@ -5,6 +5,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using ITSystem.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ITSystem.Context
 {
