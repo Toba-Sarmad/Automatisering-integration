@@ -24,8 +24,8 @@ namespace ITSystem
 
             using var db = provider.GetRequiredService<ApplicationDbContext>();
             db.Database.EnsureCreated();
-
-
+            //db.Users.RemoveRange(db.Users);
+            //db.SaveChanges();
 
             SeedAdmin(db);
 
@@ -33,6 +33,8 @@ namespace ITSystem
             Console.Write("Användarnamn: ");
             var user = Console.ReadLine() ?? string.Empty;
             Console.Write("Lösenord: ");
+            //var pass = Console.ReadLine() ?? string.Empty;  // <-- Temporärt utan ReadPassword
+            //Console.WriteLine($"DEBUG: user='{user}', pass='{pass}'");
             var pass = ReadPassword();
 
             if (!Authenticate(db, user, pass))
@@ -71,11 +73,11 @@ namespace ITSystem
             {
                 if (!db.Users.Any())
                 {
-                    var hash = PasswordHash.Hash("admin$23");
+                    var hash = PasswordHash.Hash("Admin!23");
                     db.Users.Add(new User { Username = "admin", PasswordHash = hash });
                     db.SaveChanges();
-                    Console.WriteLine(" Skapade admin/admin (lösenord: Admin$23");
-
+                    Console.WriteLine("[Init]Skapade admin/admin (lösenord: Admin!23");
+                    
                 }
             }
 
@@ -121,22 +123,45 @@ namespace ITSystem
 
             static string ReadPassword()
             {
-                var password = string.Empty;
-                ConsoleKey key;
-                while ((key = Console.ReadKey(intercept: true).Key) != ConsoleKey.Enter)
+                Console.Write("");
+                var password = "";
+                ConsoleKeyInfo key;
+
+                while ((key = Console.ReadKey(true)).Key != ConsoleKey.Enter)
                 {
-                    if (key == ConsoleKey.Backspace && password.Length > 0)
+                    if (key.Key == ConsoleKey.Backspace && password.Length > 0)
                     {
                         password = password[0..^1];
                         Console.Write("\b \b");
-                        continue;
                     }
-                    var ch = Console.ReadKey(true).KeyChar;
-                    password += ch;
-                    Console.Write("*");
+                    else if (!char.IsControl(key.KeyChar))
+                    {
+                        password += key.KeyChar;
+                        Console.Write("*");
+                    }
                 }
                 Console.WriteLine();
                 return password;
+
+
+                //var password = string.Empty;
+                //ConsoleKey key;
+                //while ((key = Console.ReadKey(intercept: true).Key) != ConsoleKey.Enter)
+                //{
+                //    if (key == ConsoleKey.Backspace && password.Length > 0)
+                //    {
+                //        password = password[0..^1];
+                //        Console.Write("\b \b");
+                //        continue;
+                //    }
+                //    else if (!char.IsControl((char)key))
+                //    {
+                //        password += key.ToString();
+                //        Console.Write("*");
+                //    }
+                //}
+                //Console.WriteLine();
+                //return password;
             }
         }
 
