@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace ITSystem.Context
 {
-    internal class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
