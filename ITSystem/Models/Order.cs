@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ITSystem.Models;
+
+
+
 
 namespace ITSystem.Models
 {
-    internal class Order
+    public enum OrderStatus
+    {
+        New = 0,
+        Sent = 1,
+        Acknowledged = 2,
+    }
+    public class Order
     {
         public int Id { get; set; }
 
