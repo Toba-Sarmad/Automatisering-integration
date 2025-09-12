@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTSystem", "OTSystem\OTSyst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationSystem", "IntegrationSystem\IntegrationSystem.csproj", "{DD37369E-5787-4036-9057-6E42A4BC6414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{F4C2CBC8-DCC5-4107-B9B4-D705E02163C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DD37369E-5787-4036-9057-6E42A4BC6414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD37369E-5787-4036-9057-6E42A4BC6414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD37369E-5787-4036-9057-6E42A4BC6414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C2CBC8-DCC5-4107-B9B4-D705E02163C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C2CBC8-DCC5-4107-B9B4-D705E02163C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C2CBC8-DCC5-4107-B9B4-D705E02163C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C2CBC8-DCC5-4107-B9B4-D705E02163C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

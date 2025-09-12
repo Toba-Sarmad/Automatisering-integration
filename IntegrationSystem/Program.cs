@@ -2,6 +2,9 @@
 using EasyModbus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ITSystem.Context;
+using ITSystem.Models;
+
 
 namespace IntegrationSystem
 {
@@ -68,9 +71,7 @@ namespace IntegrationSystem
                     Thread.Sleep(2000);
                 }
             }
-
             client.Disconnect();
         }
-    }
     }
 }
