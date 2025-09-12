@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ITSystem.Models
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         [Required] public string Username { get; set; } = string.Empty;
