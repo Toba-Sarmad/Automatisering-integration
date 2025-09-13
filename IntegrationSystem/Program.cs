@@ -26,7 +26,7 @@ namespace IntegrationSystem
 
             var provider = services.BuildServiceProvider();
             using var db = provider.GetRequiredService<ApplicationDbContext>();
-            db.Database.EnsureCreated();
+            //db.Database.EnsureCreated();
 
             // Koppla upp mot OT-systemet via Modbus
             var client = new ModbusClient("127.0.0.1", 502); // OT lyssnar på port 502

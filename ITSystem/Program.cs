@@ -23,7 +23,7 @@ namespace ITSystem
             var provider = services.BuildServiceProvider();
 
             using var db = provider.GetRequiredService<ApplicationDbContext>();
-            db.Database.EnsureCreated();
+            //db.Database.EnsureCreated();
             //db.Users.RemoveRange(db.Users);
             //db.SaveChanges();
 
