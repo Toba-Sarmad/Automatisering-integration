@@ -1,0 +1,7 @@
+SELECT TOP (1000) [Id]
+      ,[CustomerName]
+      ,[Item]
+      ,[Quantity]
+      ,[Status]
+      ,[CreatedUtc]
+  FROM [AutomationDB].[dbo].[Orders]
